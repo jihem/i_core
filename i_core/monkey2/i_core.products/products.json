@@ -1,0 +1,10 @@
+{
+	"emscripten":{
+		"Application Name":"I_core",
+		"Application Type":"wasm"
+	},
+	"windows":{
+		"Application Name":"I_core",
+		"Application Type":"console"
+	}
+}
