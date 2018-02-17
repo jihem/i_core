@@ -54,5 +54,7 @@ I'm working on two games. In the first you have to build a program by stacking g
 
 I think I can share this library and my interest in doing this.
 
+Sample of use :
+- https://github.com/jihem/i_core/blob/master/i_editor/pico8/i_editor.pdf
+
 jihem
-picoscope101.fr where mad things come to life...
