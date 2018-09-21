@@ -58,3 +58,5 @@ Sample of use :
 - https://github.com/jihem/i_core/blob/master/i_editor/pico8/i_editor.pdf
 
 jihem
+
+I_C( °)RE is now available in pico8, tic-80, monkey2, cpp and go (last implementation with some extensions and a CLI REPL).
