@@ -1,0 +1,1 @@
+:g "gagne" . ; :p "perdu" . ; :dice rnd * flr 3 > # ?g ! ?p ; 6 dice

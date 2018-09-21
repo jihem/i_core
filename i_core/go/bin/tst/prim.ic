@@ -1,0 +1,119 @@
+/*
+	prim.ic
+*/
+
+// -- init
+
+		:init
+			0 >i
+			0 >m
+		;
+
+// -- fnct
+
+		:fnct 
+		<i >>
+		<m >>
+
+		>m
+		>i
+
+		//<m .. " " .. <i .. " " .. // dsp
+		<m <m <i / flr <i * -  0 =
+		<< >m
+		<< >i		
+		;
+
+// -- subf
+
+		:subf_save
+			<i >>
+			<m >>
+			1 >>			
+		;
+		:subf_exec
+			>m
+			>i
+			subf_loop
+		;
+		:subf_exit
+			0 >m
+			<< >_
+			0 >>
+		;
+		:subf_loop
+			<i
+			#
+			<m 
+			fnct ?subf_exit
+			1 +
+			>i
+			<i
+			<m
+			<
+			?:
+		;
+		:subf_load
+			<<		
+			<< >m
+			<< >i
+		;
+
+
+// -- prim
+		:prim_display
+			>>
+			.. " " ..
+			<<
+		;
+		:prim_discard
+			>_
+		;
+
+		:prim_save
+			<i >>
+			<m >>
+		;
+		:prim_exec
+			>m
+			>i
+			prim_loop
+		;
+		:prim_loop
+			<i
+
+//# # "". "->" .. .. " // " .. sqr flr .
+
+
+			#
+
+					subf_save
+			2	<i 	subf_exec
+					subf_load
+
+			#
+			?prim_display
+			!
+			?prim_discard
+
+			1 +
+			>i
+			<i
+			<m
+			> !
+			?:
+		;
+		:prim_load
+			<< >m
+			<< >i
+		;
+
+// -- exec
+
+		init
+
+		prim_save
+3 100 	prim_exec
+		prim_load
+
+

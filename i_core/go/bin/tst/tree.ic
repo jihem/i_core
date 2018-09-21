@@ -1,0 +1,36 @@
+/*
+	tree.ic
+*/
+
+
+// space string: S 
+:S
+	<S " " + >S
+	1 - #
+	?:
+;
+
+// star string: T 
+:T
+	<T "*" + >T
+	1 - #
+	?:
+;
+
+// loop 
+:L
+	// compute string: N 10..2 
+	<N 1 - >N
+	"" >S <N S >_
+	"" >T 10 <N - T >_
+	// display 
+	<S <T <T + + .
+	// loop 
+	<N 1 > ?: 
+;
+
+// main 
+10 >N L
+
+// check 
+.s

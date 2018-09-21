@@ -1,0 +1,26 @@
+:SPACE // (n) -> display n space(s)
+	" " ..
+	1 - # ?:
+	>_ 
+;
+:FIXED // (n v) -> display numeric value v on n charaters (right justified)
+	#
+	>FIXED
+	str len - SPACE
+	<FIXED ..
+;
+:DISPLAY
+	5 <A FIXED " " ..
+	10 <A sin 1000 * flr 1000 /	FIXED
+	"" .
+;
+
+:§A 
+	>A DISPLAY
+	<A
+	10 -
+	#
+	?:
+	>_
+;
+360 §A

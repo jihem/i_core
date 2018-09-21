@@ -1,0 +1,8 @@
+:sum_init 0 >> ; :sum_add << + >> sum_loop ; :sum_loop # 0 = ! ?sum_add ; :sum sum_init sum_loop << . ;
+// + until 0 : 0 v1 v2 ... sum
+// 0 1 2 3 sum
+
+
+:sum >> + << 1 - # 0 = ?: >_ . ;
+// +  times : v1 v2 ... n sum
+// 1 2 3 2 sum

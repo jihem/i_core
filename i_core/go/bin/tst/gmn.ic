@@ -1,0 +1,39 @@
+:init 
+	100 rnd * flr 1 +
+	>N // number to find
+	0
+	>T // number of the current attempt 
+;
+
+:lr
+	"+ gd" .
+	getp
+;
+
+:gt
+	"+ pt" .
+	getp	
+;
+
+:eq
+	"ok" .	
+;
+
+:eval
+	# <N < ?lr
+	# <N > ?gt
+	# <N = ?eq
+	.
+;
+
+
+:getp
+	<T 1 + >T
+	"attempt #" .. <T .. " ? " ..
+	.?
+	val? ?eval
+;
+
+init
+<N .
+getp

@@ -1,0 +1,3 @@
+:T1 "Nom ? " .. .? "Bonjour " .. .. "." . ;
+
+:OK >_ 5 * . <_ ; :HS "non-numeric!" . ; "Nombre ? " .. .? val? # ?OK ! ?HS ;
